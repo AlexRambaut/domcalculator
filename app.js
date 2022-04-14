@@ -1,25 +1,7 @@
 // The box the user sees their numbers entered in
 const dialogueBox = document.getElementById("dialoguebox");
-// The number buttons
-const buttonZero = document.getElementById("button-zero");
-const buttonOne = document.getElementById("button-one");
-const buttonTwo = document.getElementById("button-two");
-const buttonThree = document.getElementById("button-three");
-const buttonFour = document.getElementById("button-four");
-const buttonFive = document.getElementById("button-five");
-const buttonSix = document.getElementById("button-six");
-const buttonSeven = document.getElementById("button-seven");
-const buttonEight = document.getElementById("button-eight");
-const buttonNine = document.getElementById("button-nine");
-//The operator buttons
-const buttonDivide = document.getElementById("button-divide");
-const buttonMultiply = document.getElementById("button-multiply");
-const buttonSubtract = document.getElementById("button-subtract");
-const buttonAdd = document.getElementById("button-add");
-const buttonEquals = document.getElementById("button-equals");
-// Clear buttons
-const buttonClear = document.getElementById("button-clear");
-const historyClear = document.getElementById("button-history-clear")
+// The number, operator and clear buttons
+const calculatorButtons = document.querySelectorAll(".calc-button")
 // The unordered list element for storing past calculations
 const historyElem = document.getElementById("history-elem");
 
@@ -170,20 +152,4 @@ function save(result) {
 }
 
 // Event listeners pass the event to our parseInput function
-buttonZero.addEventListener("click", parseInput, false);
-buttonOne.addEventListener("click", parseInput, false);
-buttonTwo.addEventListener("click", parseInput, false);
-buttonThree.addEventListener("click", parseInput, false);
-buttonFour.addEventListener("click", parseInput, false);
-buttonFive.addEventListener("click", parseInput, false);
-buttonSix.addEventListener("click", parseInput, false);
-buttonSeven.addEventListener("click", parseInput, false);
-buttonEight.addEventListener("click", parseInput, false);
-buttonNine.addEventListener("click", parseInput, false);
-buttonDivide.addEventListener("click", parseInput, false);
-buttonMultiply.addEventListener("click", parseInput, false);
-buttonSubtract.addEventListener("click", parseInput, false);
-buttonAdd.addEventListener("click", parseInput, false);
-buttonClear.addEventListener("click", parseInput, false);
-historyClear.addEventListener("click", parseInput, false);
-buttonEquals.addEventListener("click", parseInput, false);
+calculatorButtons.forEach(buttonElement => {buttonElement.addEventListener("click", parseInput)});
